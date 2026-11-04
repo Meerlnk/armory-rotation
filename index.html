@@ -91,23 +91,23 @@ footer{margin-top:22px;text-align:center;color:#778197;font-size:12px}
 const WEEK_1_START = "2026-10-19";
 
 const rewards = [
-  {id:"R1",name:"Troop Rewards",amount:"3H · 160",cls:"r1",icon:"🪖"},
+  {id:"R1",name:"Troop Speedup",amount:"3H · 160",cls:"r1",icon:"⚔️"},
   {id:"R2",name:"Hero Shards (Yellow)",amount:"260",cls:"r2",icon:"🧩"},
   {id:"R3",name:"Hero Shards (Purple)",amount:"650",cls:"r3",icon:"🧩"},
-  {id:"R4",name:"Equipment",amount:"8,100",cls:"r4",icon:"⚔️"},
-  {id:"R5",name:"Building Rewards",amount:"3H · 160",cls:"r5",icon:"🔨"},
+  {id:"R4",name:"Orange Books",amount:"8,100",cls:"r4",icon:"📚"},
+  {id:"R5",name:"Building Speedup",amount:"3H · 160",cls:"r5",icon:"🔨"},
   {id:"R6",name:"Gears",amount:"35,000",cls:"r6",icon:"⚙️"},
-  {id:"R7",name:"Crate",amount:"90",cls:"r7",icon:"🎁"},
-  {id:"R8",name:"Crystal",amount:"220,000",cls:"r8",icon:"🔷"}
+  {id:"R7",name:"Food",amount:"90",cls:"r7",icon:"🍗"},
+  {id:"R8",name:"Crystals",amount:"220,000",cls:"r8",icon:"💎"}
 ];
 
 // Rows are alliance names; each column contains every R1-R8 exactly once.
 // Schedule transcribed from the supplied rotation image.
-const alliances = ["TDMA","XXX","Z","PPC","HEL","TFX","LVTS","HOA"];
+const alliances = ["TDMA","XXX","FSHM","PPC","HEL","TFX","LVTS","HOA"];
 const schedule = {
   TDMA:["R7","R5","R1","R2","R4","R6","R8","R3"],
   XXX: ["R4","R6","R8","R3","R7","R5","R1","R2"],
-  Z:   ["R3","R7","R5","R1","R2","R4","R6","R8"],
+  FSHM:["R3","R7","R5","R1","R2","R4","R6","R8"],
   PPC: ["R8","R3","R7","R5","R1","R2","R4","R6"],
   HEL: ["R1","R2","R4","R6","R8","R3","R7","R5"],
   TFX: ["R2","R4","R6","R8","R3","R7","R5","R1"],
