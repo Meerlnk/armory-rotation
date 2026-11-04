@@ -2,126 +2,151 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#10131d">
 <title>Armory Rotation — 8 Week Plan</title>
 <style>
-:root{--bg:#10131c;--panel:#1b2130;--line:#343e53;--text:#f5f3ed;--muted:#b9c1d0;--gold:#efc36d}
+:root{--bg:#0b0e16;--panel:#151a27;--panel2:#1c2332;--line:#30394c;--text:#f4f5fb;--muted:#aeb8cb;--gold:#f5bd55;--green:#76d9a0}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#303b55 0,#151a27 48%,#0d1018 100%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-.wrap{max-width:1120px;margin:auto;padding:20px 15px 40px}
-.hero{border:1px solid #78603b;border-radius:22px;padding:25px;background:linear-gradient(120deg,#302a35,#1b2030 58%,#342a25);box-shadow:0 12px 30px #0005;position:relative;overflow:hidden}
-.hero:after{content:"⚔️";position:absolute;right:20px;bottom:-25px;font-size:115px;opacity:.09}
-.kicker{font-size:11px;letter-spacing:.2em;font-weight:900;color:var(--gold)}
-h1{font-size:clamp(30px,5vw,48px);line-height:1.05;margin:8px 0;text-transform:uppercase;text-shadow:0 3px #0006}
-.subtitle{color:#d1d6e1;font-size:14px}
-.toprow{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.status{background:#252d3c;border:1px solid #56627a;border-radius:999px;padding:8px 12px;color:#dce5f7;font-size:12px;font-weight:800}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:15px 0}
-.stat{border:1px solid var(--line);background:#1a2030;border-radius:15px;padding:14px}
-.stat label{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
-.stat strong{display:block;font-size:18px;margin-top:5px}
-.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin:26px 0 12px}
-.sectionhead h2{margin:0;font-size:22px}.sectionhead p{margin:4px 0 0;color:var(--muted);font-size:13px}
-.legend{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.reward{display:flex;align-items:center;gap:12px;padding:13px;background:linear-gradient(145deg,#252d3e,#191f2c);border:1px solid #3c465b;border-radius:16px;box-shadow:0 5px 12px #0002;min-width:0}
-.reward-icon{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:32px;flex-shrink:0;border:1px solid #ffffff35;box-shadow:inset 0 1px #ffffff35,0 4px 8px #0003}
-.reward b{font-size:13px;display:block}.reward small{color:#c1c9d7;display:block;font-size:11px;margin-top:4px;line-height:1.3}
-.r1{background:linear-gradient(145deg,#8e55d5,#48248d)} /* helmet */
-.r2{background:linear-gradient(145deg,#347e9a,#17465d)} /* yellow shard */
-.r3{background:linear-gradient(145deg,#b06a2f,#65351d)} /* purple shard */
-.r4{background:linear-gradient(145deg,#cf7b24,#783b12)} /* orange books */
-.r5{background:linear-gradient(145deg,#4c596b,#252e3d)}
-.r6{background:linear-gradient(145deg,#277db2,#17446e)}
-.r7{background:linear-gradient(145deg,#9d4b38,#5b2927)}
-.r8{background:linear-gradient(145deg,#247fae,#164b80)}
-.weekbar{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0}
-.weekbtn{padding:10px 14px;border-radius:12px;border:1px solid #46516a;background:#202738;color:#e2e6ef;font-weight:800;cursor:pointer}
-.weekbtn.active{background:linear-gradient(135deg,#f1cf83,#c8933e);border-color:#ffe3a4;color:#2b2415;box-shadow:0 4px 12px #dcae4b35}
-.weekbanner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border:1px solid #66563c;background:linear-gradient(100deg,#302b2a,#202536);border-radius:16px;padding:15px 18px;margin:12px 0}
-.weekbanner strong{font-size:22px}.weekbanner span{color:#cbd2df;font-size:13px}
-.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
-.alliance-card{position:relative;overflow:hidden;border:1px solid #414c63;background:linear-gradient(145deg,#283145,#1a2130);border-radius:18px;padding:15px;box-shadow:0 9px 20px #0003;min-height:190px}
-.alliance-card:after{content:"✦";position:absolute;right:8px;bottom:-20px;font-size:80px;opacity:.05}
-.cardtop{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.alliance-name{font-weight:950;font-size:17px;letter-spacing:.04em;background:#343e54;border:1px solid #56627b;border-radius:9px;padding:6px 10px}
-.armory-tag{font-size:11px;color:#f0ce8b;font-weight:900}
-.big-reward{display:flex;align-items:center;gap:13px;margin-top:18px}
-.big-icon{width:82px;height:82px;border-radius:21px;display:grid;place-items:center;font-size:45px;border:1px solid #ffffff45;box-shadow:inset 0 2px #ffffff35,0 8px 15px #0003;flex-shrink:0}
-.reward-id{font-size:27px;font-weight:1000;line-height:1}.reward-name{font-weight:750;margin-top:5px;font-size:13px;line-height:1.3}.reward-amount{font-size:12px;color:#c4ccda;margin-top:5px}
-.current-note{display:inline-block;margin-top:13px;color:#f4d48f;font-size:10px;font-weight:900;letter-spacing:.1em}
-.smallnote{font-size:12px;color:var(--muted);line-height:1.6;margin-top:16px}
-footer{text-align:center;color:#8993a6;font-size:12px;margin-top:26px}
-@media(max-width:850px){.legend,.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:1fr}}
-@media(max-width:480px){.wrap{padding:10px}.hero{padding:19px}.legend,.cards{grid-template-columns:1fr}.alliance-card{min-height:160px}.big-icon{width:72px;height:72px;font-size:39px}}
+body{margin:0;background:radial-gradient(ellipse at top,#20283a 0,#0b0e16 55%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+.wrap{max-width:1180px;margin:auto;padding:22px 16px 40px}
+.hero{border:1px solid #66502d;border-radius:20px;padding:24px 20px;background:linear-gradient(135deg,#2b2630,#171b27 58%,#25202a);box-shadow:0 12px 35px #0005;position:relative;overflow:hidden}
+.hero:after{content:"⚔";position:absolute;right:20px;top:8px;font-size:90px;opacity:.08}
+.eyebrow{color:var(--gold);font-weight:800;letter-spacing:.18em;font-size:12px}
+h1{font-size:clamp(28px,5vw,48px);margin:5px 0 0;line-height:1.05;text-transform:uppercase;text-shadow:0 3px 0 #0006}
+.sub{color:var(--muted);margin-top:10px}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:999px;border:1px solid #4a5a47;background:#17291f;color:#b9f2cc;font-size:13px;font-weight:700}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.info{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+.info small{color:var(--muted);display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.info strong{display:block;font-size:20px;margin-top:4px}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:26px 0 12px;flex-wrap:wrap}
+.section-title h2{font-size:20px;margin:0}
+.section-title p{margin:0;color:var(--muted);font-size:13px}
+.rewards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.reward{display:flex;align-items:center;gap:10px;padding:12px;background:var(--panel);border:1px solid var(--line);border-radius:13px;min-width:0}
+.rbadge{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-weight:900;font-size:16px;flex:none;border:1px solid #ffffff30}
+.reward b{display:block;font-size:13px}.reward span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.r1{background:#5d19c5}.r2{background:#bd7411}.r3{background:#7b24c8}.r4{background:#b96b18}.r5{background:#242936}.r6{background:#1476b9}.r7{background:#a71ab9}.r8{background:#087db8}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+button{border:1px solid var(--line);background:#20283a;color:var(--text);border-radius:10px;padding:9px 13px;font-weight:700;cursor:pointer}
+button:hover{border-color:var(--gold)}button.active{background:var(--gold);color:#1b1720;border-color:var(--gold)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:15px;background:#111621}
+table{border-collapse:separate;border-spacing:4px;width:100%;min-width:850px;padding:5px}
+th{font-size:11px;color:var(--muted);padding:10px 6px;text-transform:uppercase;letter-spacing:.06em}
+th:first-child{min-width:130px;text-align:left}
+td{padding:0}
+.alliance{background:#20283a;border:1px solid #38445a;border-radius:9px;padding:11px 12px;font-weight:900;white-space:nowrap}
+.cell{display:block;text-align:center;padding:11px 5px;border-radius:9px;border:1px solid #ffffff20;font-weight:900;min-width:75px}
+.cell small{display:block;font-size:10px;font-weight:600;opacity:.8;margin-top:3px}
+.current-col{outline:2px solid var(--gold);outline-offset:-2px}
+.current-cell{box-shadow:0 0 0 2px var(--gold),0 0 15px #f5bd5540}
+.note{color:var(--muted);font-size:12px;line-height:1.6;margin-top:12px}
+footer{margin-top:22px;text-align:center;color:#778197;font-size:12px}
+@media(max-width:800px){.rewards{grid-template-columns:repeat(2,minmax(0,1fr))}.info-grid{grid-template-columns:1fr}.wrap{padding:12px}.hero{padding:20px 16px}}
+@media(max-width:420px){.rewards{grid-template-columns:1fr}.reward{padding:10px}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="hero">
- <div class="toprow"><div class="kicker">ALLIANCE WAR • 8 WEEK PLAN</div><div class="status">⚔️ FIXED ROTATION</div></div>
- <h1>Armory Rotation</h1>
- <div class="subtitle">Eight alliances · Eight Armories · One clear plan</div>
+  <div class="topline"><div class="eyebrow">ALLIANCE WAR • ROTATION SYSTEM</div><span class="pill">🟢 FIXED 8-WEEK CYCLE</span></div>
+  <h1>Armory Rotation</h1>
+  <div class="sub">8 alliances · 8 armories · 1 unique reward per alliance every week</div>
 </header>
-<div class="stats">
- <div class="stat"><label>Current rotation</label><strong id="currentWeek">Week 3</strong></div>
- <div class="stat"><label>Weekly schedule</label><strong>Reset every Monday</strong></div>
+
+<div class="info-grid">
+  <div class="info"><small>Current rotation</small><strong id="weekLabel">Week 3</strong></div>
+  <div class="info"><small>Registration</small><strong>Monday → Thursday</strong></div>
+  <div class="info"><small>Armory attack</small><strong>Friday ⚔️</strong></div>
 </div>
-<div class="sectionhead"><div><h2>🏆 Armory rewards</h2><p>Reward icons and quantities</p></div></div>
-<div class="legend" id="legend"></div>
-<div class="sectionhead"><div><h2>🛡️ Weekly rotation</h2><p>Select a week to see each alliance's assigned Armory</p></div></div>
-<div class="weekbar" id="weekButtons"></div>
-<div class="weekbanner"><div><strong id="weekTitle">Week 3</strong><br><span id="weekSub">Current week's assignments</span></div><span>Registration: Monday–Thursday<br>Armory attack: Friday ⚔️</span></div>
-<div class="cards" id="cards"></div>
-<div class="smallnote">The schedule repeats every 8 weeks. Week 1 starts on Monday, 19 October 2026. The current week is calculated automatically using the device's local date.</div>
-<footer>Armory Rotation · Alliance use</footer>
+
+<div class="section-title">
+  <div><h2>Reward legend</h2><p>Rewards assigned to each Armory</p></div>
 </div>
+<div class="rewards" id="rewards"></div>
+
+<div class="section-title">
+  <div><h2>Weekly assignments</h2><p id="weekDescription">Current week's armory assignments</p></div>
+  <div class="controls" id="weekButtons"></div>
+</div>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>Alliance</th><th>Week 1</th><th>Week 2</th><th>Week 3</th><th>Week 4</th><th>Week 5</th><th>Week 6</th><th>Week 7</th><th>Week 8</th></tr></thead>
+<tbody id="schedule"></tbody>
+</table>
+</div>
+<div class="note">
+  <b>How it works:</b> The schedule repeats every 8 weeks. The current week is calculated automatically from the Week 1 start date. The gold outline marks the current week.
+  <br><b>Admin note:</b> If the rotation's Week 1 date changes, edit <code>WEEK_1_START</code> near the bottom of this file.
+</div>
+<footer>Armory Rotation · Alliance use · No login required</footer>
+</div>
+
 <script>
+// Change this date if needed. Week 1 started Monday, 19 October 2026.
+// Dates are interpreted in the viewer's local timezone.
 const WEEK_1_START = "2026-10-19";
-const rewards=[
-{id:"R1",name:"Troop Rewards",amount:"3H · 160",icon:"⚔️",cls:"r1"},
-{id:"R2",name:"Hero Shards (Yellow)",amount:"260",icon:"🧩",cls:"r2"},
-{id:"R3",name:"Hero Shards (Purple)",amount:"650",icon:"🧩",cls:"r3"},
-{id:"R4",name:"Orange Books",amount:"8,100",icon:"📚",cls:"r4"},
-{id:"R5",name:"Building Rewards",amount:"3H · 160",icon:"🔨",cls:"r5"},
-{id:"R6",name:"Gears",amount:"35,000",icon:"⚙️",cls:"r6"},
-{id:"R7",name:"Crate",amount:"90",icon:"🍗",cls:"r7"},
-{id:"R8",name:"Crystal",amount:"220,000",icon:"💎",cls:"r8"}];
-const alliances=["TDMA","XXX","FSHM","PPC","HEL","TFX","LVTS","HOA"];
-// 8-week schedule transcribed from the original rotation image.
-const schedule={
-TDMA:["R7","R5","R1","R2","R4","R6","R8","R3"],
-XXX: ["R4","R6","R8","R3","R7","R5","R1","R2"],
-FSHM:["R3","R7","R5","R1","R2","R4","R6","R8"],
-PPC: ["R8","R3","R7","R5","R1","R2","R4","R6"],
-HEL: ["R1","R2","R4","R6","R8","R3","R7","R5"],
-TFX: ["R2","R4","R6","R8","R3","R7","R5","R1"],
-LVTS:["R5","R1","R2","R4","R6","R8","R3","R7"],
-HOA: ["R6","R8","R3","R7","R5","R1","R2","R4"]};
-const rewardMap=Object.fromEntries(rewards.map(r=>[r.id,r]));
-const start=new Date(WEEK_1_START+"T00:00:00");
-const now=new Date();
-const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
-const days=Math.floor((today-start)/86400000);
-const currentWeek=days<0?1:(Math.floor(days/7)%8)+1;
-document.getElementById("currentWeek").textContent="Week "+currentWeek;
-document.getElementById("legend").innerHTML=rewards.map(r=>`<div class="reward"><div class="reward-icon ${r.cls}">${r.icon}</div><div><b>${r.id} · ${r.name}</b><small>${r.amount}</small></div></div>`).join("");
-const weekButtons=document.getElementById("weekButtons");
+
+const rewards = [
+  {id:"R1",name:"Troop Rewards",amount:"3H · 160",cls:"r1",icon:"🪖"},
+  {id:"R2",name:"Hero Shards (Yellow)",amount:"260",cls:"r2",icon:"🧩"},
+  {id:"R3",name:"Hero Shards (Purple)",amount:"650",cls:"r3",icon:"🧩"},
+  {id:"R4",name:"Equipment",amount:"8,100",cls:"r4",icon:"⚔️"},
+  {id:"R5",name:"Building Rewards",amount:"3H · 160",cls:"r5",icon:"🔨"},
+  {id:"R6",name:"Gears",amount:"35,000",cls:"r6",icon:"⚙️"},
+  {id:"R7",name:"Crate",amount:"90",cls:"r7",icon:"🎁"},
+  {id:"R8",name:"Crystal",amount:"220,000",cls:"r8",icon:"🔷"}
+];
+
+// Rows are alliance names; each column contains every R1-R8 exactly once.
+// Schedule transcribed from the supplied rotation image.
+const alliances = ["TDMA","XXX","Z","PPC","HEL","TFX","LVTS","HOA"];
+const schedule = {
+  TDMA:["R7","R5","R1","R2","R4","R6","R8","R3"],
+  XXX: ["R4","R6","R8","R3","R7","R5","R1","R2"],
+  Z:   ["R3","R7","R5","R1","R2","R4","R6","R8"],
+  PPC: ["R8","R3","R7","R5","R1","R2","R4","R6"],
+  HEL: ["R1","R2","R4","R6","R8","R3","R7","R5"],
+  TFX: ["R2","R4","R6","R8","R3","R7","R5","R1"],
+  LVTS:["R5","R1","R2","R4","R6","R8","R3","R7"],
+  HOA: ["R6","R8","R3","R7","R5","R1","R2","R4"]
+};
+
+const rewardMap = Object.fromEntries(rewards.map(r=>[r.id,r]));
+const start = new Date(WEEK_1_START + "T00:00:00");
+const today = new Date();
+const days = Math.floor((new Date(today.getFullYear(),today.getMonth(),today.getDate()) - start) / 86400000);
+const currentWeek = days < 0 ? 1 : (Math.floor(days/7)%8)+1;
+
+document.getElementById("weekLabel").textContent = "Week " + currentWeek;
+document.getElementById("rewards").innerHTML = rewards.map(r =>
+  `<div class="reward"><div class="rbadge ${r.cls}">${r.icon}</div><div><b>${r.id} · ${r.name}</b><span>${r.amount}</span></div></div>`
+).join("");
+
+const buttons = document.getElementById("weekButtons");
 for(let w=1;w<=8;w++){
- const b=document.createElement("button");
- b.className="weekbtn"+(w===currentWeek?" active":"");
- b.textContent="WEEK "+w;
- b.onclick=()=>showWeek(w);
- weekButtons.appendChild(b);
+  const b=document.createElement("button");
+  b.textContent="W"+w;
+  if(w===currentWeek)b.classList.add("active");
+  b.onclick=()=>showWeek(w);
+  buttons.appendChild(b);
 }
-function showWeek(w){
- document.querySelectorAll(".weekbtn").forEach((b,i)=>b.classList.toggle("active",i+1===w));
- document.getElementById("weekTitle").textContent="Week "+w;
- document.getElementById("weekSub").textContent=w===currentWeek?"Current week's assignments":w===currentWeek%8+1?"Next week's preview":"Rotation preview";
- document.getElementById("cards").innerHTML=alliances.map(a=>{
-  const r=rewardMap[schedule[a][w-1]];
-  return `<article class="alliance-card"><div class="cardtop"><span class="alliance-name">${a}</span><span class="armory-tag">ARMORY ${r.id}</span></div><div class="big-reward"><div class="big-icon ${r.cls}">${r.icon}</div><div><div class="reward-id">${r.id}</div><div class="reward-name">${r.name}</div><div class="reward-amount">${r.amount}</div></div></div>${w===currentWeek?'<div class="current-note">✦ CURRENT WEEK ✦</div>':''}</article>`;
- }).join("");
+function showWeek(selected){
+  document.querySelectorAll("#weekButtons button").forEach((b,i)=>b.classList.toggle("active",i+1===selected));
+  document.getElementById("weekDescription").textContent =
+    selected===currentWeek ? `Week ${selected} · Current week` : `Week ${selected} · ${selected===currentWeek+1?"Next week":"Rotation preview"}`;
+  document.getElementById("schedule").innerHTML = alliances.map(a=>{
+    const cells=schedule[a].map((r,i)=>{
+      const info=rewardMap[r];
+      const isCurrent=i+1===currentWeek;
+      const isSelected=i+1===selected;
+      return `<td><span class="cell ${info.cls} ${isCurrent?"current-col":""} ${isSelected?"current-cell":""}">${r}<small>${info.name}</small></span></td>`;
+    }).join("");
+    return `<tr><td><div class="alliance">${a}</div></td>${cells}</tr>`;
+  }).join("");
 }
 showWeek(currentWeek);
 </script>
